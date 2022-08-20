@@ -1,0 +1,7 @@
+name: Ansible Role Test
+on: [push]
+jobs:
+  Ansible-Role-Test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Ansible Test Completed!"
