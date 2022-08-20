@@ -3,7 +3,8 @@ This [Ansible][1] role is used by Catosplace Engineering team members to install
 
 [![Actions Status](https://github.com/catosplace/catosplace-engineering-base-role/actions/workflows/main.yml/badge.svg)](https://github.com/catosplace/catosplace-engineering-base-role/actions)
 
-<!-- [![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-name--of--my--role-blue.svg)](https://galaxy.ansible.com/Catosplace/engineering-base/) -->
+[![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-catosplace.engineering_base-blue.svg?label=Ansible%20Galaxy)](https://galaxy.ansible.com/catosplace/engineering_base)
+[![Ansible Quality Score](https://img.shields.io/ansible/quality/60076?label=Quality%20Score)](https://galaxy.ansible.com/catosplace/engineering_base)
 
 ## Requirements
 
