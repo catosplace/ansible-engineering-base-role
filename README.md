@@ -1,7 +1,7 @@
 # Catosplace Engineering Base Role
 This [Ansible][1] role is used by Catosplace Engineering team members to install some common tooling.
 
-[![Actions Status](https://github.com/catosplace/catosplace-engineering-base-role/workflows/build/badge.svg)](https://github.com/catosplace/catosplace-engineering-base-role/actions)
+[![Actions Status](https://github.com/catosplace/catosplace-engineering-base-role/actions/workflows/main.yml/badge.svg)](https://github.com/catosplace/catosplace-engineering-base-role/actions)
 
 <!-- [![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-name--of--my--role-blue.svg)](https://galaxy.ansible.com/Catosplace/engineering-base/) -->
 
