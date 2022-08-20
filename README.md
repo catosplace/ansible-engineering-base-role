@@ -27,7 +27,7 @@ A list of other roles hosted on Galaxy should go here, plus any details in regar
 ```
 - hosts: all
   roles:
-    - catosplace.engineering-base
+    - catosplace.engineering_base
 ```
 
 ## License
