@@ -26,7 +26,8 @@ A list of other roles hosted on Galaxy should go here, plus any details in regar
 ## Example Playbook
 
 ```
-- hosts: all
+- hosts: 127.0.0.1
+  connection: local
   roles:
     - catosplace.engineering_base
 ```
