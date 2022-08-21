@@ -1,1 +1,14 @@
 ---
+# tasks file for Catosplace engineering base tools
+
+- name: install yamllint
+  become: true
+  ansible.builtin.package:
+    name: yamllint
+    state: present
+
+- name: install ansible_lint
+  become: true
+  ansible.builtin.package:
+    name: ansible-lint
+    state: present

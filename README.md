@@ -40,6 +40,14 @@ See license.md
 
 ### Useful Information
 
+To run current tests
+```
+ansible-playbook ./tests/test.yml -i tests/inventory --ask-become-pass --check
+```
+
+#### References
+
 * [CyVerse Ansible Role Template](https://github.com/CyVerse-Ansible/ansible-role-template)
+* [Unit Testing Ansible Roles using TDD with Molecule](https://archive.fosdem.org/2021/schedule/event/ansible_tdd_molecule/attachments/slides/4579/export/events/attachments/ansible_tdd_molecule/slides/4579/KYN_FOSDEM_21.pdf)
 
 [1]: https://www.ansible.com
