@@ -1,5 +1,6 @@
+---
 name: Ansible Role Test
-on: [push]
+on: [push]  # yamllint disable-line rule:truthy
 jobs:
   Ansible-Role-Test:
     runs-on: ubuntu-latest
