@@ -1,10 +1,18 @@
 # Catosplace Engineering Base Role
-This [Ansible][1] role is used by Catosplace Engineering team members to install some common tooling.
 
 [![Actions Status](https://github.com/catosplace/catosplace-engineering-base-role/actions/workflows/main.yml/badge.svg)](https://github.com/catosplace/catosplace-engineering-base-role/actions)
 
-[![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-catosplace.engineering_base-blue.svg?label=Ansible%20Galaxy)](https://galaxy.ansible.com/catosplace/engineering_base)
+[![Ansible Role](https://img.shields.io/ansible/role/60076?label=Ansible%20Galaxy)](https://galaxy.ansible.com/catosplace/engineering_base)
 [![Ansible Quality Score](https://img.shields.io/ansible/quality/60076?label=Quality%20Score)](https://galaxy.ansible.com/catosplace/engineering_base)
+
+
+This [Ansible][1] role is used by Catosplace Engineering team members to install some common tooling.
+
+Current Catosplace Engineering base tooling:
+
+* [adr-tools](https://github.com/npryce/adr-tools) - Tool for working with 
+* [pre-commit](https://pre-commit.com/) - Tool for managing pre-commit hooks
+Architecture Decision Records
 
 ## Requirements
 
@@ -48,6 +56,7 @@ ansible-playbook ./tests/test.yml -i tests/inventory --ask-become-pass --check
 #### References
 
 * [CyVerse Ansible Role Template](https://github.com/CyVerse-Ansible/ansible-role-template)
+* [Testing your Ansible roles with Molecule](https://www.jeffgeerling.com/blog/2018/testing-your-ansible-roles-molecule)
 * [Unit Testing Ansible Roles using TDD with Molecule](https://archive.fosdem.org/2021/schedule/event/ansible_tdd_molecule/attachments/slides/4579/export/events/attachments/ansible_tdd_molecule/slides/4579/KYN_FOSDEM_21.pdf)
 
 [1]: https://www.ansible.com
