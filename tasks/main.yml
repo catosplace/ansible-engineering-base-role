@@ -1,14 +1,22 @@
 ---
 # tasks file for Catosplace engineering base tools
 
-- name: install yamllint
+- name: Include adr-tools tasks
+  ansible.builtin.include_tasks: adr_tools.yml
+  tags: adr
+
+# Temporary Ansible Role tooling until the Ansible Engineering role is developed
+
+- name: manage temporary tool - yamllint
   become: true
   ansible.builtin.package:
     name: yamllint
-    state: present
+    state: "{{ temporary_tooling_state }}"
+  tags: temporary_tools
 
-- name: install ansible_lint
+- name: manage temporary tool - ansible_lint
   become: true
   ansible.builtin.package:
     name: ansible-lint
-    state: present
+    state: "{{ temporary_tooling_state }}"
+  tags: temporary_tools

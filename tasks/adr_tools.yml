@@ -1,0 +1,39 @@
+---
+# tasks file to install adr-tools
+
+- name: Check if adr-tools {{ adr_tools_version }} already installed
+  ansible.builtin.stat:
+    path: /opt/adr-tools-{{ adr_tools_version }}/src/adr
+  register: adr_bin
+  tags: adr
+
+- name: Download adr-tools {{ adr_tools_version }}
+  ansible.builtin.get_url:
+    # yamllint disable-line rule:line-length
+    url: https://github.com/npryce/adr-tools/archive/refs/tags/{{ adr_tools_version }}.tar.gz
+    checksum: "sha256:{{ adr_tools_sha256 }}"
+    dest: /tmp
+  when: not adr_bin.stat.exists
+  tags: adr
+
+- name: Unarchive adr-tools {{ adr_tools_version }}
+  ansible.builtin.unarchive:
+    src: /tmp/adr-tools-{{ adr_tools_version }}.tar.gz
+    dest: /opt
+    remote_src: true
+  when: not adr_bin.stat.exists
+  tags: adr
+
+- name: Symlink default adr-tools
+  file:
+    src: "adr-tools-{{ adr_tools_version }}"
+    dest: "/opt/adr-tools"
+    state: link
+  tags: adr
+
+- name: Add adr executable script
+  copy:
+    src: adr
+    dest: /usr/local/bin
+    mode: 0755
+  tags: adr

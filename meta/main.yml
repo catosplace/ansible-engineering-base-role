@@ -1,11 +1,12 @@
 ---
 galaxy_info:
   role_name: engineering_base
+  namespace: catosplace
   author: Catosplace Engineering
   description: Install base engineering team tooling
   license: GPLv3
   min_ansible_version: '1.2'
   platforms:
     - name: Ubuntu
-      version:
+      versions:
         - jammy
