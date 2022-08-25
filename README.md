@@ -46,6 +46,19 @@ See license.md
 
 ## Author Information
 
+## Running GitHub Actions Locally
+When making changes to the the [GitHub Action](https://github.com/features/actions) in this repository contributors should utilise the [act](https://github.com/nektos/act) tool that enables fast feedback by running actions locally.
+
+### Important Information related to the Yamllint GitHub Action
+The [yamllint action](https://github.com/frenck/action-yamllint) used by the GitHub Action performs a build when not run locally which does not appear to work with `act`. To work around this contributors should perform the following action to build a container for use locally.
+
+```
+docker build \
+  -t act-frenck-action-yamllint-v1-dockeraction:latest \
+  ~/.cache/act/frenck-action-yamllint@v1/src
+```
+**NOTE**: Ensure you use the correct version tag for the action when running this command
+
 ### Useful Information
 
 To run current tests
