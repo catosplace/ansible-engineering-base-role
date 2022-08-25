@@ -1,0 +1,16 @@
+---
+# .ansible-lint
+
+exclude_paths:
+  - .github/
+
+use_default_rules: true
+
+skip_list:
+  - yaml  # Violations reported by yamllint.
+
+enable_list:
+  - fqcn-builtins  # Use FQCN for builtin actions.
+
+warn_list:
+  - experimental  # All rules tagged as experimental

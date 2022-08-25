@@ -13,6 +13,7 @@
     url: https://github.com/npryce/adr-tools/archive/refs/tags/{{ adr_tools_version }}.tar.gz
     checksum: "sha256:{{ adr_tools_sha256 }}"
     dest: /tmp
+    mode: 0644
   when: not adr_bin.stat.exists
   tags: adr
 
@@ -25,14 +26,14 @@
   tags: adr
 
 - name: Symlink default adr-tools
-  file:
+  ansible.builtin.file:
     src: "adr-tools-{{ adr_tools_version }}"
     dest: "/opt/adr-tools"
     state: link
   tags: adr
 
 - name: Add adr executable script
-  copy:
+  ansible.builtin.copy:
     src: adr
     dest: /usr/local/bin
     mode: 0755

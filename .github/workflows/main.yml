@@ -1,8 +1,34 @@
 ---
-name: Ansible Role Test
-on: [push]  # yamllint disable-line rule:truthy
+name: Engineering Ansible Base Role
+
+on: [push, pull_request]  # yamllint disable-line rule:truthy
+
+permissions: read-all
+
+# Reference information about concurrency stategy provided
+# here:
+# https://exercism.org/docs/building/github/gha-best-practices
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ startsWith(github.ref, 'refs/pull/') }}
+
 jobs:
-  Ansible-Role-Test:
-    runs-on: ubuntu-latest
+
+  ansible-lint:
+    timeout-minutes: 5
+    runs-on: ubuntu-22.04
+    steps:
+      # Important: This sets up your GITHUB_WORKSPACE environment variable
+      - uses: actions/checkout@v3
+
+      - name: Lint Yaml
+        uses: frenck/action-yamllint@v1
+
+      - name: Lint Ansible Role
+        uses: ansible-community/ansible-lint-action@v6
+
+  ansible-role-test:
+    timeout-minutes: 5
+    runs-on: ubuntu-22.04
     steps:
       - run: echo "Ansible Test Completed!"
