@@ -7,14 +7,14 @@
 
 # Temporary Ansible Role tooling until the Ansible Engineering role is developed
 
-- name: manage temporary tool - yamllint
+- name: Manage temporary tool - yamllint
   become: true
   ansible.builtin.package:
     name: yamllint
     state: "{{ temporary_tooling_state }}"
   tags: temporary_tools
 
-- name: manage temporary tool - ansible_lint
+- name: Manage temporary tool - ansible_lint
   become: true
   ansible.builtin.package:
     name: ansible-lint

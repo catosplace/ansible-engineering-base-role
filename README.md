@@ -44,6 +44,21 @@ A list of other roles hosted on Galaxy should go here, plus any details in regar
 
 See license.md
 
+## Architecture Decision Records
+This role uses Architecture Decision Records (ADR) to capture significant design decisions. If you are new to the concept of ADRs then it is recommended you read [Documenting Architecture Decision](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) by Michael Nygard.
+
+ This role uses a lightweight ADR toolset created by Nat Pryce's [adr-tools](https://github.com/npryce/adr-tools). ADRs for this role are stored under the `doc/adr` folder.
+
+ The ADRs for this role can be found in the [ADR.md](ADR.md) document.
+
+ ### Useful Manual ADR Tool Information
+
+Regenerate the [ADR.md](ADR.md)
+
+```
+adr generate toc -p doc/adr/ -i doc/adr/intro.md -o doc/adr/outro.md
+```
+
 ## Author Information
 
 ## Running GitHub Actions Locally
