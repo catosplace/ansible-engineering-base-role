@@ -81,7 +81,12 @@ docker build \
 
 To run current tests
 ```
-ansible-playbook ./tests/test.yml -i tests/inventory --ask-become-pass --become --check --verbose --tags temporary_tools,adr
+ansible-playbook ./tests/test.yml \
+  -i tests/inventory \
+  --ask-become-pass \
+  --check \
+  --verbose \
+  --tags temporary_tools,adr
 ```
 
 #### References

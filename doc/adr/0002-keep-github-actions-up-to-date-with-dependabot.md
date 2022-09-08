@@ -1,4 +1,4 @@
-# 2. Keep GitHub actions up to date with dependabot
+# 2. Keep GitHub Actions up to date with Dependabot
 
 Date: 2022-09-08
 
