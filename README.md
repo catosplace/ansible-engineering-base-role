@@ -56,7 +56,10 @@ This role uses Architecture Decision Records (ADR) to capture significant design
 Regenerate the [ADR.md](ADR.md)
 
 ```
-adr generate toc -p doc/adr/ -i doc/adr/intro.md -o doc/adr/outro.md
+adr generate toc \
+  -p doc/adr/ \
+  -i doc/adr/intro.md \
+  -o doc/adr/outro.md  > ADR.md
 ```
 
 ## Author Information
