@@ -8,11 +8,26 @@
 
 This [Ansible][1] role is used by Catosplace Engineering team members to install some common tooling.
 
+## Base Tools
+
 Current Catosplace Engineering base tooling:
 
-* [adr-tools](https://github.com/npryce/adr-tools) - Tool for working with 
+* [adr-tools](https://github.com/npryce/adr-tools) - Tool for working with a log of [Architecture Decision Records](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) (ADRs)
+
+Temporary tooling installed at this time until a Catosplace Engineering Ansible role is implemented:
+
+* [yamllint](https://github.com/adrienverge/yamllint) - Linter for YAML files
+* [ansible-lint](https://ansible-lint.readthedocs.io/en/latest/) - Linter for Ansible playbooks, roles and collections
+
+Planned Catosplace Engineering base tooling:
+
+* [Python3 and Python3 Pip](https://www.python.org/downloads/) - Required for several tools used by Catosplace Engineering teams
 * [pre-commit](https://pre-commit.com/) - Tool for managing pre-commit hooks
 Architecture Decision Records
+* [docker](https://docker.com) - Container Runtime
+* [docker-compose](https://docs.docker.com/compose/) - Used to run multi-container Docker applications
+* [git](https://git-scm.com/) - Distributed version control
+* [act](https://github.com/nektos/act) - Used to run GitHub Actions locally
 
 ## Requirements
 
