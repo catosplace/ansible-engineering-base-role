@@ -1,0 +1,32 @@
+---
+name: Engineering Ansible Base Role Release
+
+on:  # yamllint disable-line rule:truthy
+  push:
+    tags:
+      - 'v*'
+
+permissions: read-all
+
+# Reference information about concurrency stategy provided
+# here:
+# https://exercism.org/docs/building/github/gha-best-practices
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ startsWith(github.ref, 'refs/pull/') }}
+
+jobs:
+
+  ansible-galaxy-import:
+    timeout-minutes: 5
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: galaxy-import
+        uses: robertdebock/galaxy-action@1.2.1
+        with:
+          galaxy_api_key: ${{ secrets.galaxy_api_key }}
+          git_branch: main
