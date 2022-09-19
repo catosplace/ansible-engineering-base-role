@@ -2,8 +2,8 @@
 
 [![Actions Status](https://github.com/catosplace/catosplace-engineering-base-role/actions/workflows/main.yml/badge.svg)](https://github.com/catosplace/catosplace-engineering-base-role/actions)
 
-[![Ansible Role](https://img.shields.io/ansible/role/60076?label=Ansible%20Galaxy)](https://galaxy.ansible.com/catosplace/engineering_base)
-[![Ansible Quality Score](https://img.shields.io/ansible/quality/60076?label=Quality%20Score)](https://galaxy.ansible.com/catosplace/engineering_base)
+[![Ansible Role](https://img.shields.io/ansible/role/60353?label=Ansible%20Galaxy)](https://galaxy.ansible.com/catosplace/engineering_base)
+[![Ansible Quality Score](https://img.shields.io/ansible/quality/60353?label=Quality%20Score)](https://galaxy.ansible.com/catosplace/engineering_base)
 
 
 This [Ansible][1] role is used by Catosplace Engineering team members to install some common tooling.
@@ -103,6 +103,19 @@ ansible-playbook ./tests/test.yml \
   --verbose \
   --tags temporary_tools,adr
 ```
+
+**Ansible Galaxy Role Id**
+
+To produce the Ansible Galaxy status buttons for this role documentation, the Ansible Galaxy role id is required.
+
+The following command can be used to obtain the Ansible Galaxy role id:
+
+```
+ansible-galaxy info \
+  catosplace.engineering_base \
+  | grep -E 'id: [0-9]' | awk {'print $2'}
+```
+
 
 #### References
 
