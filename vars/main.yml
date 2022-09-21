@@ -1,2 +1,13 @@
 ---
 # vars file for Catosplace engineering base tools
+
+## Temporary Tooling
+
+temporary_tooling_state: present
+
+## ADR Tools
+
+# adr-tools default values
+adr_tools_version: 3.0.0
+# yamllint disable-line rule:line-length
+adr_tools_sha256: 9490f31a457c253c4113313ed6352efcbf8f924970a309a08488833b9c325d7c

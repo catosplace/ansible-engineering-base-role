@@ -3,7 +3,7 @@
 
 - name: Check if adr-tools {{ adr_tools_version }} already installed
   ansible.builtin.stat:
-    path: /opt/adr-tools-{{ adr_tools_version }}/src/adr
+    path: "{{ adr_tools_install_path }}-{{ adr_tools_version }}/src/adr"
   register: adr_bin
   tags: adr
 
@@ -28,7 +28,7 @@
 - name: Symlink default adr-tools
   ansible.builtin.file:
     src: "adr-tools-{{ adr_tools_version }}"
-    dest: "/opt/adr-tools"
+    dest: "{{ adr_tools_install_path }}"
     state: link
   tags: adr
 

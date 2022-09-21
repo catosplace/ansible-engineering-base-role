@@ -1,4 +1,4 @@
-# Catosplace Engineering Base Role
+# Catosplace Engineering Ansible Base Role
 
 [![Actions Status](https://github.com/catosplace/catosplace-engineering-base-role/actions/workflows/main.yml/badge.svg)](https://github.com/catosplace/catosplace-engineering-base-role/actions)
 
@@ -31,22 +31,24 @@ Architecture Decision Records
 
 ## Requirements
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+There are no requirements outside Ansible to run this role.
 
 ## Role Variables
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+At this time there is some temporary tooling required to for building this role. These will be moved to other roles as and when they are built. The role enables them to be present or absent using the `temporary_tooling_state` variable.
+
+Each of the core tools installed will have an installation path, version and potentially a verification mechanism which will have defaults but which can also utilise variables.
 
 | Variable                | Required | Default | Choices                   | Comments                                 |
 |-------------------------|----------|---------|---------------------------|------------------------------------------|
-| foo                     | no       | false   | true, false               | example variable                         |
-| bar                     | yes      |         | eggs, spam                | example variable                         |
-
-## Dependencies
-
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+| temporary_tooling_state | no       | present   | present, absent               | Use Temporary Tools                        |
+| adr_tools_install_path | no | /opt/adr-tools | | adr-tools Installation Path
+| adr_tools_version       | no       | 3.0.0        |                 | Version of ADR Tools                          |
+| adr_tools_sha256 | no | SHA for 3.0.0 | | SHA for ADR Tools
 
 ## Example Playbook
+
+Simple Playbook
 
 ```
 - hosts: 127.0.0.1
@@ -55,9 +57,38 @@ A list of other roles hosted on Galaxy should go here, plus any details in regar
     - catosplace.engineering_base
 ```
 
+Specific Version Playbook
+```
+- hosts: 127.0.0.1
+  connection: local
+  roles:
+    - catosplace.engineering_base
+      adr_tools_version: 3.0.0
+      adr_tools_sha256: "9490f31a457c253c4113313ed6352efcbf8f924970a309a08488833b9c325d7c"
+```
 ## License
 
-See license.md
+Catosplace Engineering Base Role - Provide Base Tooling for Catosplace Engineering teams
+
+Copyright (C) 2022 Catoplace Engineering
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+See [LICENSE.md](./LICENSE.md)
+
+## Author Information
+This role was built and is maintained by the Catosplace Engineering team.
 
 ## Architecture Decision Records
 This role uses Architecture Decision Records (ADR) to capture significant design decisions. If you are new to the concept of ADRs then it is recommended you read [Documenting Architecture Decision](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) by Michael Nygard.
@@ -76,9 +107,6 @@ adr generate toc \
   -i doc/adr/intro.md \
   -o doc/adr/outro.md  > ADR.md
 ```
-
-## Author Information
-
 ## Running GitHub Actions Locally
 When making changes to the the [GitHub Action](https://github.com/features/actions) in this repository contributors should utilise the [act](https://github.com/nektos/act) tool that enables fast feedback by running actions locally.
 
@@ -115,7 +143,6 @@ ansible-galaxy info \
   catosplace.engineering_base \
   | grep -E 'id: [0-9]' | awk {'print $2'}
 ```
-
 
 #### References
 
