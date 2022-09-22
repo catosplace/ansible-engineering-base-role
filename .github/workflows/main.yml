@@ -28,7 +28,11 @@ jobs:
         uses: ansible-community/ansible-lint-action@v6
 
   ansible-role-test:
+    needs: ansible-lint
     timeout-minutes: 5
     runs-on: ubuntu-22.04
     steps:
+      # Important: This sets up your GITHUB_WORKSPACE environment variable
+      - uses: actions/checkout@v3
+
       - run: echo "Ansible Test Completed!"
