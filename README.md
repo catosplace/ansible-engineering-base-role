@@ -144,6 +144,16 @@ ansible-galaxy info \
   | grep -E 'id: [0-9]' | awk {'print $2'}
 ```
 
+**Ansible Galaxy Import using Act**
+
+Prior to tagging releases this role can be imported into Ansible Galaxy using `act`. This can be done using the following command:
+
+```
+act \
+  -j ansible-galaxy-import \
+  -s galaxy_api_key=<GALAXY_API_KEY>
+```
+
 #### References
 
 * [CyVerse Ansible Role Template](https://github.com/CyVerse-Ansible/ansible-role-template)
