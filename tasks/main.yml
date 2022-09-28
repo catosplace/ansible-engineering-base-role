@@ -1,25 +1,15 @@
 ---
 # tasks file for Catosplace engineering base tools
 
-- name: Include adr-tools tasks
+- name: Install Python and Pip
+  ansible.builtin.include_tasks: python_pip.yml
+  tags: python_pip
+
+- name: Install adr-tools
   ansible.builtin.include_tasks: adr_tools.yml
   tags: adr
 
 # Temporary Ansible Role tooling until the Ansible Engineering role is developed
-
-- name: Install Pyhton is Python3
-  become: true
-  ansible.builtin.package:
-    name: python-is-python3
-    state: "{{ temporary_tooling_state }}"
-  tags: temporary_tools
-
-- name: Install Pip
-  become: true
-  ansible.builtin.package:
-    name: python3-pip
-    state: "{{ temporary_tooling_state }}"
-  tags: temporary_tools
 
 - name: Manage temporary tool - yamllint
   ansible.builtin.pip:

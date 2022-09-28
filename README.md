@@ -12,6 +12,7 @@ This [Ansible][1] role is used by Catosplace Engineering team members to install
 
 Current Catosplace Engineering base tooling:
 
+* [Python3 and Python3 Pip](https://www.python.org/downloads/) - Required for several tools used by Catosplace Engineering teams
 * [adr-tools](https://github.com/npryce/adr-tools) - Tool for working with a log of [Architecture Decision Records](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) (ADRs)
 
 Temporary tooling installed at this time until a Catosplace Engineering Ansible role is implemented:
@@ -21,7 +22,6 @@ Temporary tooling installed at this time until a Catosplace Engineering Ansible 
 
 Planned Catosplace Engineering base tooling:
 
-* [Python3 and Python3 Pip](https://www.python.org/downloads/) - Required for several tools used by Catosplace Engineering teams
 * [pre-commit](https://pre-commit.com/) - Tool for managing pre-commit hooks
 Architecture Decision Records
 * [docker](https://docker.com) - Container Runtime
