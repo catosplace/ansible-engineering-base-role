@@ -13,6 +13,7 @@ This [Ansible][1] role is used by Catosplace Engineering team members to install
 Current Catosplace Engineering base tooling:
 
 * [Python3 and Python3 Pip](https://www.python.org/downloads/) - Required for several tools used by Catosplace Engineering teams
+* [pre-commit](https://pre-commit.com/) - Tool for managing pre-commit hooks
 * [adr-tools](https://github.com/npryce/adr-tools) - Tool for working with a log of [Architecture Decision Records](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) (ADRs)
 
 Temporary tooling installed at this time until a Catosplace Engineering Ansible role is implemented:
@@ -22,8 +23,6 @@ Temporary tooling installed at this time until a Catosplace Engineering Ansible 
 
 Planned Catosplace Engineering base tooling:
 
-* [pre-commit](https://pre-commit.com/) - Tool for managing pre-commit hooks
-Architecture Decision Records
 * [docker](https://docker.com) - Container Runtime
 * [docker-compose](https://docs.docker.com/compose/) - Used to run multi-container Docker applications
 * [git](https://git-scm.com/) - Distributed version control
@@ -45,7 +44,7 @@ Each of the core tools installed will have an installation path, version and pot
 | adr_tools_install_path | no | /opt/adr-tools | | adr-tools Installation Path
 | adr_tools_version       | no       | 3.0.0        |                 | Version of ADR Tools                          |
 | adr_tools_sha256 | no | SHA for 3.0.0 | | SHA for ADR Tools
-
+| pre_commit_version | no | 2.20.0 | | Version of pre-commit required |
 ## Example Playbook
 
 Simple Playbook
@@ -129,7 +128,7 @@ ansible-playbook ./tests/test.yml \
   --ask-become-pass \
   --check \
   --verbose \
-  --tags temporary_tools,adr
+  --tags adr,temporary_tools,pre-commit,python_pip
 ```
 
 **Ansible Galaxy Role Id**

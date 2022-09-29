@@ -5,6 +5,12 @@
   ansible.builtin.include_tasks: python_pip.yml
   tags: python_pip
 
+- name: Install pre-commit {{ pre_commit_version | default('2.20.0') }}
+  ansible.builtin.pip:
+    name: pre-commit=={{ pre_commit_version | default('2.20.0') }}
+    state: present
+  tags: pre-commit
+
 - name: Install adr-tools
   ansible.builtin.include_tasks: adr_tools.yml
   tags: adr

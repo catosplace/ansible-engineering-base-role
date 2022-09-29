@@ -18,6 +18,7 @@ When it is more appropriate to use a Python package than a distro package Catosp
 
 Catosplace engineers should utilise the Python packages to install the following packages:
 
+* [pre-commit](https://pre-commit.com/)
 * [yamllint](https://github.com/adrienverge/yamllint)
 * [ansible-lint](https://github.com/ansible/ansible-lint)
 
