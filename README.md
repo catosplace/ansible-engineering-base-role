@@ -89,6 +89,15 @@ See [LICENSE.md](./LICENSE.md)
 ## Author Information
 This role was built and is maintained by the Catosplace Engineering team.
 
+## Pre-Commit Hooks
+This role utilisies the [pre-commit](https://pre-commit.com/) tooling to preform checks, linting and even generation of Architecture Decision Record documentation. These checks are configured in the `.pre-commit-config.yaml` file and include the following key checks:
+
+* yamllint
+* ansible-lint
+* generate-adr-docs
+
+These checks can be run before commiting to GitHub using the `pre-commit` command, to run all checks. Specific checks can be run using the `pre-commit run <HOOK>` command, i.e `pre-commit run yamllint` will run just the `yamllint` check.
+
 ## Architecture Decision Records
 This role uses Architecture Decision Records (ADR) to capture significant design decisions. If you are new to the concept of ADRs then it is recommended you read [Documenting Architecture Decision](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) by Michael Nygard.
 
@@ -106,6 +115,9 @@ adr generate toc \
   -i doc/adr/intro.md \
   -o doc/adr/outro.md  > ADR.md
 ```
+
+**NOTE**: This action command is incorporated in the `pre-commit` hooks provided. Running the command `pre-commit run generate-adr-docs` will result in this command being run. It will also be run before any commits as part of the `pre-commit` checks. Contributors no longer need to remember to run this command.
+
 ## Running GitHub Actions Locally
 When making changes to the the [GitHub Action](https://github.com/features/actions) in this repository contributors should utilise the [act](https://github.com/nektos/act) tool that enables fast feedback by running actions locally.
 

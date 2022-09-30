@@ -1,0 +1,38 @@
+---
+# reference: https://pre-commit.com
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.3.0
+    hooks:
+      - id: "check-added-large-files"
+      - id: "check-case-conflict"
+      - id: "detect-private-key"
+      - id: "end-of-file-fixer"
+      - id: "trailing-whitespace"
+
+  # Text file hooks
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.27.1
+    hooks:
+      - id: "yamllint"
+        args:
+          - "-c=.yamllint"
+
+  # Ansible hooks
+  - repo: https://github.com/ansible/ansible-lint
+    rev: v6.5.2
+    hooks:
+      - id: "ansible-lint"
+        name: "ansible-lint"
+
+  # Generate ADR Documentation
+  - repo: local
+    hooks:
+      - id: "generate-adr-docs"
+        name: "generate-adr-docs"
+        entry: bash -c 'adr generate toc \
+          -p doc/adr/ \
+          -i doc/adr/intro.md \
+          -o doc/adr/outro.md > ADR.md'
+        language: system
