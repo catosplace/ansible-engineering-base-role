@@ -5,6 +5,9 @@
 [![Ansible Role](https://img.shields.io/ansible/role/60353?label=Ansible%20Galaxy)](https://galaxy.ansible.com/catosplace/engineering_base)
 [![Ansible Quality Score](https://img.shields.io/ansible/quality/60353?label=Quality%20Score)](https://galaxy.ansible.com/catosplace/engineering_base)
 
+![GitHub issues](https://img.shields.io/github/issues-raw/catosplace/ansible-engineering-base-role) ![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/catosplace/ansible-engineering-base-role)
+
+![GitHub](https://img.shields.io/github/license/catosplace/ansible-engineering-base-role)
 
 This [Ansible][1] role is used by Catosplace Engineering team members to install some common tooling.
 
