@@ -96,6 +96,8 @@ This role utilisies the [pre-commit](https://pre-commit.com/) tooling to preform
 * ansible-lint
 * generate-adr-docs
 
+To start using these hooks contributors should install them using the `pre-commit install` command. This will ensure that `pre-commit` runs automatically on `git commit`!
+
 These checks can be run before commiting to GitHub using the `pre-commit` command, to run all checks. Specific checks can be run using the `pre-commit run <HOOK>` command, i.e `pre-commit run yamllint` will run just the `yamllint` check.
 
 ## Architecture Decision Records
