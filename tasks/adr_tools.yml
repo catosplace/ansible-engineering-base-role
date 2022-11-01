@@ -1,7 +1,7 @@
 ---
 # tasks file to install adr-tools
 
-- name: Check if adr-tools {{ adr_tools_version }} already installed
+- name: Check for adr-tools version {{ adr_tools_version }}
   ansible.builtin.stat:
     path: "{{ adr_tools_install_path }}-{{ adr_tools_version }}/src/adr"
   register: adr_bin

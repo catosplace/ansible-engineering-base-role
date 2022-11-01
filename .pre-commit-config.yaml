@@ -19,6 +19,13 @@ repos:
         args:
           - "-c=.yamllint"
 
+  # GitHub Workflows & Dependabot hooks
+  - repo: https://github.com/python-jsonschema/check-jsonschema
+    rev: 0.18.4
+    hooks:
+      - id: check-github-workflows
+      - id: check-dependabot
+
   # Ansible hooks
   - repo: https://github.com/ansible/ansible-lint
     rev: v6.5.2
