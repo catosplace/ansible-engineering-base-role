@@ -170,6 +170,8 @@ act \
   -s galaxy_api_key=<GALAXY_API_KEY>
 ```
 
+More information about importing this role to Ansible Galaxy can be found [here](.github/README.md#ansible-galaxy-import).
+
 #### References
 
 * [CyVerse Ansible Role Template](https://github.com/CyVerse-Ansible/ansible-role-template)
