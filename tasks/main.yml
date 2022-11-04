@@ -29,3 +29,7 @@
     name: ansible-lint
     state: "{{ temporary_tooling_state }}"
   tags: temporary_tools
+
+- name: Manage tempory tool - molecule
+  ansible.builtin.include_tasks: molecule.yml
+  tags: temporary_tools
