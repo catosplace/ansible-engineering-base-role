@@ -1,0 +1,16 @@
+---
+# tasks file to install molecule for testing Ansible roles
+
+- name: Ensure libssl-dev present
+  become: true
+  ansible.builtin.package:
+    name: libssl-dev
+    state: "{{ temporary_tooling_state }}"
+  tags: temporary_tools
+
+- name: Install Molecule
+  ansible.builtin.pip:
+    name: molecule
+    state: "{{ temporary_tooling_state }}"
+    extra_args: --user
+  tags: temporary_tools

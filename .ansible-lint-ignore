@@ -1,0 +1,1 @@
+tests/test.yml role-name[path] # Disable role-name[path] rule for test.yml

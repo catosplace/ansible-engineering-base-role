@@ -25,7 +25,7 @@ jobs:
         uses: frenck/action-yamllint@v1
 
       - name: Lint Ansible Role
-        uses: ansible-community/ansible-lint-action@v6
+        uses: ansible/ansible-lint@v6.20.0
 
   ansible-role-test:
     needs: ansible-lint

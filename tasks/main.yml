@@ -24,8 +24,12 @@
   tags: temporary_tools
 
 - name: Manage temporary tool - ansible_lint
-  become: true
   ansible.builtin.pip:
-    name: ansible-lint
+    name: ansible-lint==6.17.0
     state: "{{ temporary_tooling_state }}"
+    extra_args: --upgrade
+  tags: temporary_tools
+
+- name: Manage tempory tool - molecule
+  ansible.builtin.include_tasks: molecule.yml
   tags: temporary_tools
