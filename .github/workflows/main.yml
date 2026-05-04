@@ -19,13 +19,13 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       # Important: This sets up your GITHUB_WORKSPACE environment variable
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Lint Yaml
         uses: frenck/action-yamllint@v1
 
       - name: Lint Ansible Role
-        uses: ansible-community/ansible-lint-action@v6
+        uses: ansible/ansible-lint@v26.4.0
 
   ansible-role-test:
     needs: ansible-lint
@@ -33,6 +33,6 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       # Important: This sets up your GITHUB_WORKSPACE environment variable
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - run: echo "Ansible Test Completed!"
