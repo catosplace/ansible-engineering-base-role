@@ -1,6 +1,7 @@
 ---
 
-- hosts: localhost
+- name: Test Ansible Engineering Role
+  hosts: localhost
   connection: local
   roles:
-    - role: ../..
+    - role: catosplace.engineering_base
